@@ -10,24 +10,35 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p>Welcome, <%= current_user.username %></p>
-      <form action="<%= session_url %>" method="post">
-        <%= auth_token %>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log Out">
-      </form>
-    <% else %>
-      <p>Welcome, guest</p>
-      <a href="<%= new_session_url %>">Log In</a>
-      <a href="<%= new_user_url %>">Sign Up</a>
-    <% end %>
-    <br>
-    <% if flash.now[:errors] %>
-      <% flash.now[:errors].each do |error| %>
-        <%= error %><br>
+    <header>
+      <a href="<%= root_url %>">Freddit</a>
+      <% if logged_in? %>
+        <p>Welcome, <%= current_user.username %></p>
+        <form action="<%= session_url %>" method="post">
+          <%= auth_token %>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log Out">
+        </form>
+      <% else %>
+        <p>Welcome, guest</p>
+        <a href="<%= new_session_url %>">Log In</a>
+        <a href="<%= new_user_url %>">Sign Up</a>
       <% end %>
-    <% end %>
+    </header>
+    <br>
+
+    <div class="flash">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %><br>
+        <% end %>
+      <% end %>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %><br>
+        <% end %>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>

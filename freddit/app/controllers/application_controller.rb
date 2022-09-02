@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
+  def require_logged_in
+    unless logged_in?
+      flash[:errors] = ["You must be logged in to perform this action!"]
+      redirect_to :root
+    end
+  end
+
   def login!(user)
     session[:session_token] = user.reset_session_token!
     @current_user = user

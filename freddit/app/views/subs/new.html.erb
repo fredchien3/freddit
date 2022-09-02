@@ -1,0 +1,15 @@
+<h1>Create a subfreddit</h1>
+
+<form action="<%= subs_url %>" method="post">
+  <%= auth_token %>
+  <label for="sub_title">
+    Title
+    <input type="text" name="sub[title]" id="sub_title" value="<%= @sub.title %>">
+  </label>
+  <br>
+  <label for="sub_description">
+    Description
+    <textarea name="sub[description]" id="sub_description"><%= @sub.description %></textarea>
+  </label>
+  <input type="submit" value="Create subfreddit">
+</form>

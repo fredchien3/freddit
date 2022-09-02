@@ -1,0 +1,6 @@
+<h1>All subfreddits</h1>
+<% @subs.each do |sub| %>
+  <li><a href="<%= sub_url(sub) %>"><%= sub.title %></a></li>
+  <br>
+<% end %>
+<a href="<%= new_sub_url %>">Create a new subfreddit</a>

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     
     if @user
       login! @user
-      redirect_to user_url(@user)
+      redirect_to subs_url
     else
       @user = User.new(username: params[:user][:username])
       flash.now[:errors] = ["Invalid username or password"]
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
-    redirect_to user_url(1)
+    redirect_to subs_url
   end
 end

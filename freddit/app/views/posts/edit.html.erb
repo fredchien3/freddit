@@ -1,0 +1,11 @@
+<h1>Edit Post Content</h1>
+
+<form action="<%= posts_url %>" method="post">
+  <%= auth_token %>
+  <label for="post_content">
+    <textarea name="post[content]" id="post_content">
+      <%= @post.content %>
+    </textarea>
+  </label>
+  <input type="submit" value="Save Post">
+</form>
