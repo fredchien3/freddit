@@ -1,0 +1,30 @@
+<li>
+  <%= comment.author.username %>
+  <a href="<%= comment_url(comment) %>"><%= comment.body %></a>
+
+  <form action="<%= comments_url %>" method="post">
+    <%= auth_token %>
+    <label for="comment_body">
+      Comment:
+      <br>
+      <textarea name="comment[body]" id="comment_body" cols="20" rows="1"></textarea>
+    </label>
+    <input type="hidden" name="comment[post_id]" value="<%= post.id %>">
+    <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.id %>">
+    <input type="submit" value="Reply">
+  </form>
+
+  <% if comment.author == current_user %>
+    <form action="<%= comment_url(comment) %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Comment">
+    </form>
+  <% end %>
+
+  <ul>
+    <% comment.child_comments.each do |child_comment| %>
+      <%= render "comments/comment", comment: child_comment, post: post %>
+    <% end %>
+  </ul>
+</li>

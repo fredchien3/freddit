@@ -20,18 +20,14 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
-    @comments = @comment.comments
     render :show
   end
 
   def destroy
-    if current_user == @comment.moderator
-      @comment = Comment.find(params[:id])
-      @comment.destroy if @comment
-    else
-      flash[:errors] = ["You must be the moderator of this comment!"]
-      redirect_to comments_url
-    end
+    @comment = Comment.find(params[:id])
+    @comment.body = "[DELETED]"
+    @comment.save
+    redirect_back(fallback_location: root_path)
   end
 
   def edit
@@ -49,6 +45,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:body, :post_id)
+    params.require(:comment).permit(:body, :post_id, :parent_comment_id)
   end
 end
