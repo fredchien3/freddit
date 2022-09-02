@@ -21,12 +21,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
     render :show
   end
 
   def destroy
-    if current_user == @post.moderator
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    if current_user == @post.author
       @post.destroy if @post
     else
       flash[:errors] = ["You must be the moderator of this post!"]

@@ -3,6 +3,13 @@
 <h1><%= @sub.title %></h1>
 <p>Moderator: <a href="<%= user_url(moderator) %>"><%= moderator.username %></a></p>
 <p><%= @sub.description %></p>
+<% if @sub.moderator == current_user %>
+  <form action="<%= sub_url(@sub) %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Subfreddit">
+  </form>
+<% end %>
 
 <a href="<%= new_sub_post_url(@sub) %>">Create a new post</a>
 <ul>

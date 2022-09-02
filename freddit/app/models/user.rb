@@ -19,6 +19,9 @@ class User < ApplicationRecord
   has_many :moderated_subreddits,
     foreign_key: :moderator_id,
     class_name: :Sub
+  
+  has_many :comments,
+    foreign_key: :author_id
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

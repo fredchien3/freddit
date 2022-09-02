@@ -2,5 +2,32 @@
 <a href="<%= sub_url(@post.sub) %>">/r/<%= @post.sub.title %></a> | <p>posted by <a href="<%= user_url(author) %>"><%= author.username %></a></p>
 
 <h1><%= @post.title %></h1>
-<li>URL: <%= @post.url %></li>
-<li>Content: <%= @post.content %></li>
+URL: <%= @post.url %>
+<br>
+Content: <%= @post.content %>
+<% if author == current_user %>
+  <form action="" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Post">
+  </form>
+<% end %>
+
+<h2>Comments</h2>
+<a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
+
+<ul>
+  <% @comments.each do |comment| %>
+  <li>
+      <%= comment.author.username %>
+      <%= comment.body %>
+      <% if comment.author == current_user %>
+        <form action="<%=  %>" method="post">
+          <%= auth_token %>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Comment">
+        </form>
+      <% end %>
+  </li>
+  <% end %>
+</ul>
