@@ -4,12 +4,31 @@
     <title>Freddit</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p>Welcome, <%= current_user.username %></p>
+      <form action="<%= session_url %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out">
+      </form>
+    <% else %>
+      <p>Welcome, guest</p>
+      <a href="<%= new_session_url %>">Log In</a>
+      <a href="<%= new_user_url %>">Sign Up</a>
+    <% end %>
+    <br>
+    <% if flash.now[:errors] %>
+      <% flash.now[:errors].each do |error| %>
+        <%= error %><br>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
