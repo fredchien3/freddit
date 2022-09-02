@@ -1,4 +1,5 @@
-<a href="<%= sub_url(@post.sub) %>">/r/<%= @post.sub.title %></a> | <p>posted by <%= @post.author.username %></p>
+<% author = @post.author %>
+<a href="<%= sub_url(@post.sub) %>">/r/<%= @post.sub.title %></a> | <p>posted by <a href="<%= user_url(author) %>"><%= author.username %></a></p>
 
 <h1><%= @post.title %></h1>
 <li>URL: <%= @post.url %></li>
