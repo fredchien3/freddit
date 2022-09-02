@@ -12620,3 +12620,2089 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1065)
 ActiveRecord::RecordNotFound - Couldn't find Comment with 'id'=reset:
   app/controllers/comments_controller.rb:22:in `show'
 
+Started GET "/posts/5" for ::1 at 2022-09-02 16:48:35 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 9.4ms | Allocations: 13085)
+
+
+
+NoMethodError - undefined method `comments_by_parent_id' for #<Post id: 5, title: "b", url: nil, content: nil, sub_id: 4, author_id: 2, created_at: "2022-09-02 18:54:35.427453000 +0000", updated_at: "2022-09-02 18:54:35.427453000 +0000">:
+  app/controllers/posts_controller.rb:25:in `show'
+
+Started POST "/__better_errors/274f6db856b555a4/variables" for ::1 at 2022-09-02 16:48:36 -0400
+Started GET "/posts/5" for ::1 at 2022-09-02 16:48:49 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.7ms | Allocations: 13076)
+
+
+
+NameError - undefined local variable or method `params' for #<Post id: 5, title: "b", url: nil, content: nil, sub_id: 4, author_id: 2, created_at: "2022-09-02 18:54:35.427453000 +0000", updated_at: "2022-09-02 18:54:35.427453000 +0000">:
+  app/models/post.rb:29:in `comments_by_parent_id'
+  app/controllers/posts_controller.rb:25:in `show'
+
+Started POST "/__better_errors/80810d8ba0b0d54f/variables" for ::1 at 2022-09-02 16:48:49 -0400
+Started GET "/posts/5" for ::1 at 2022-09-02 16:48:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (28.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered comments/_comment.html.erb (Duration: 2.6ms | Allocations: 3410)
+  Rendered posts/show.html.erb within layouts/application (Duration: 25.1ms | Allocations: 14679)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 14773)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 36.9ms | Allocations: 29086)
+
+
+
+NoMethodError - undefined method `author' for [12, [#<Comment id: 13, body: "feeling pretty good.", author_id: 2, post_id: 5, parent_comment_id: 12, created_at: "2022-09-02 20:28:16.089775000 +0000", updated_at: "2022-09-02 20:28:16.089775000 +0000">]]:Array
+  '.freeze;@output_buffer.append=( comment.author.username );@output_buffer.safe_append='
+                                          ^^^^^^^:
+  app/views/comments/_comment.html.erb:2
+  app/views/posts/show.html.erb:21
+  app/views/posts/show.html.erb:20
+  app/controllers/posts_controller.rb:26:in `show'
+
+Started POST "/__better_errors/fe8f4bd87f926bde/variables" for ::1 at 2022-09-02 16:48:59 -0400
+Started GET "/posts/5" for ::1 at 2022-09-02 16:49:52 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 9]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 4.9ms | Allocations: 5298)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 8]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 2.7ms | Allocations: 1411)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 5]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 3.5ms | Allocations: 1411)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 4]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 19]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 20]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 4.0ms | Allocations: 1542)
+  Rendered comments/_comment.html.erb (Duration: 7.0ms | Allocations: 3189)
+  Rendered comments/_comment.html.erb (Duration: 9.8ms | Allocations: 4679)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 7]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 12]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 13]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 2.4ms | Allocations: 1513)
+  Rendered comments/_comment.html.erb (Duration: 7.0ms | Allocations: 3041)
+  Rendered comments/_comment.html.erb (Duration: 10.5ms | Allocations: 4574)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 6]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 10]]
+  ↳ app/views/comments/_comment.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."parent_comment_id" = $1[0m  [["parent_comment_id", 11]]
+  ↳ app/views/comments/_comment.html.erb:26
+  Rendered comments/_comment.html.erb (Duration: 1.7ms | Allocations: 1542)
+  Rendered comments/_comment.html.erb (Duration: 3.8ms | Allocations: 3070)
+  Rendered comments/_comment.html.erb (Duration: 7.4ms | Allocations: 4603)
+  Rendered posts/show.html.erb within layouts/application (Duration: 57.4ms | Allocations: 33985)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 35827)
+Completed 200 OK in 91ms (Views: 58.4ms | ActiveRecord: 10.9ms | Allocations: 48892)
+
+
+Started GET "/posts/reset.css" for ::1 at 2022-09-02 16:49:52 -0400
+Processing by PostsController#show as CSS
+  Parameters: {"id"=>"reset"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1067)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Post with 'id'=reset:
+  app/controllers/posts_controller.rb:23:in `show'
+
+Started GET "/posts/5" for ::1 at 2022-09-02 16:51:02 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 4.2ms | Allocations: 6578)
+  Rendered posts/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 9526)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 9620)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.6ms | Allocations: 11697)
+
+
+
+NoMethodError - undefined method `id' for #<ActionView::Base:0x0000000006dec0>
+'.freeze;     comments_hash[self.id].each do |child_comment| 
+                                ^^^:
+  app/views/comments/_comment.html.erb:26
+  app/views/posts/show.html.erb:21
+  app/views/posts/show.html.erb:20
+  app/controllers/posts_controller.rb:26:in `show'
+
+Started POST "/__better_errors/48a18cd858035b2a/variables" for ::1 at 2022-09-02 16:51:02 -0400
+Started GET "/posts/5" for ::1 at 2022-09-02 16:51:08 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.5ms | Allocations: 1089)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 0.9ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 0.8ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 4.4ms | Allocations: 8880)
+  Rendered comments/_comment.html.erb (Duration: 5.1ms | Allocations: 9039)
+  Rendered comments/_comment.html.erb (Duration: 5.5ms | Allocations: 9198)
+  Rendered comments/_comment.html.erb (Duration: 5.8ms | Allocations: 9357)
+  Rendered comments/_comment.html.erb (Duration: 6.2ms | Allocations: 9516)
+  Rendered comments/_comment.html.erb (Duration: 6.6ms | Allocations: 9675)
+  Rendered comments/_comment.html.erb (Duration: 7.0ms | Allocations: 9834)
+  Rendered comments/_comment.html.erb (Duration: 7.4ms | Allocations: 9993)
+  Rendered comments/_comment.html.erb (Duration: 7.7ms | Allocations: 10152)
+  Rendered comments/_comment.html.erb (Duration: 8.1ms | Allocations: 10311)
+  Rendered comments/_comment.html.erb (Duration: 8.4ms | Allocations: 10470)
+  Rendered comments/_comment.html.erb (Duration: 8.7ms | Allocations: 10629)
+  Rendered comments/_comment.html.erb (Duration: 9.0ms | Allocations: 10788)
+  Rendered comments/_comment.html.erb (Duration: 9.2ms | Allocations: 10947)
+  Rendered comments/_comment.html.erb (Duration: 9.4ms | Allocations: 11106)
+  Rendered comments/_comment.html.erb (Duration: 9.6ms | Allocations: 11265)
+  Rendered comments/_comment.html.erb (Duration: 9.8ms | Allocations: 11424)
+  Rendered comments/_comment.html.erb (Duration: 10.0ms | Allocations: 11583)
+  Rendered comments/_comment.html.erb (Duration: 10.2ms | Allocations: 11742)
+  Rendered comments/_comment.html.erb (Duration: 10.4ms | Allocations: 11901)
+  Rendered comments/_comment.html.erb (Duration: 11.4ms | Allocations: 12060)
+  Rendered comments/_comment.html.erb (Duration: 11.6ms | Allocations: 12219)
+  Rendered comments/_comment.html.erb (Duration: 11.9ms | Allocations: 12378)
+  Rendered comments/_comment.html.erb (Duration: 12.1ms | Allocations: 12537)
+  Rendered comments/_comment.html.erb (Duration: 12.3ms | Allocations: 12696)
+  Rendered comments/_comment.html.erb (Duration: 12.5ms | Allocations: 12855)
+  Rendered comments/_comment.html.erb (Duration: 12.7ms | Allocations: 13014)
+  Rendered comments/_comment.html.erb (Duration: 13.0ms | Allocations: 13173)
+  Rendered comments/_comment.html.erb (Duration: 13.2ms | Allocations: 13332)
+  Rendered comments/_comment.html.erb (Duration: 13.4ms | Allocations: 13491)
+  Rendered comments/_comment.html.erb (Duration: 13.7ms | Allocations: 13650)
+  Rendered comments/_comment.html.erb (Duration: 13.9ms | Allocations: 13809)
+  Rendered comments/_comment.html.erb (Duration: 14.1ms | Allocations: 13968)
+  Rendered comments/_comment.html.erb (Duration: 14.4ms | Allocations: 14127)
+  Rendered comments/_comment.html.erb (Duration: 14.7ms | Allocations: 14286)
+  Rendered comments/_comment.html.erb (Duration: 15.0ms | Allocations: 14445)
+  Rendered comments/_comment.html.erb (Duration: 15.7ms | Allocations: 14604)
+  Rendered comments/_comment.html.erb (Duration: 16.1ms | Allocations: 14763)
+  Rendered comments/_comment.html.erb (Duration: 16.7ms | Allocations: 14922)
+  Rendered comments/_comment.html.erb (Duration: 17.0ms | Allocations: 15081)
+  Rendered comments/_comment.html.erb (Duration: 17.2ms | Allocations: 15240)
+  Rendered comments/_comment.html.erb (Duration: 17.4ms | Allocations: 15399)
+  Rendered comments/_comment.html.erb (Duration: 17.7ms | Allocations: 15558)
+  Rendered comments/_comment.html.erb (Duration: 18.1ms | Allocations: 15717)
+  Rendered comments/_comment.html.erb (Duration: 18.4ms | Allocations: 15876)
+  Rendered comments/_comment.html.erb (Duration: 18.7ms | Allocations: 16035)
+  Rendered comments/_comment.html.erb (Duration: 18.9ms | Allocations: 16194)
+  Rendered comments/_comment.html.erb (Duration: 19.2ms | Allocations: 16353)
+  Rendered comments/_comment.html.erb (Duration: 19.4ms | Allocations: 16512)
+  Rendered comments/_comment.html.erb (Duration: 19.6ms | Allocations: 16671)
+  Rendered comments/_comment.html.erb (Duration: 19.9ms | Allocations: 16830)
+  Rendered comments/_comment.html.erb (Duration: 20.1ms | Allocations: 16989)
+  Rendered comments/_comment.html.erb (Duration: 20.3ms | Allocations: 17148)
+  Rendered comments/_comment.html.erb (Duration: 20.5ms | Allocations: 17307)
+  Rendered comments/_comment.html.erb (Duration: 20.7ms | Allocations: 17466)
+  Rendered comments/_comment.html.erb (Duration: 20.9ms | Allocations: 17625)
+  Rendered comments/_comment.html.erb (Duration: 21.1ms | Allocations: 17784)
+  Rendered comments/_comment.html.erb (Duration: 21.3ms | Allocations: 17943)
+  Rendered comments/_comment.html.erb (Duration: 21.7ms | Allocations: 18102)
+  Rendered comments/_comment.html.erb (Duration: 21.9ms | Allocations: 18261)
+  Rendered comments/_comment.html.erb (Duration: 22.1ms | Allocations: 18420)
+  Rendered comments/_comment.html.erb (Duration: 22.3ms | Allocations: 18579)
+  Rendered comments/_comment.html.erb (Duration: 22.5ms | Allocations: 18738)
+  Rendered comments/_comment.html.erb (Duration: 22.7ms | Allocations: 18897)
+  Rendered comments/_comment.html.erb (Duration: 22.9ms | Allocations: 19056)
+  Rendered comments/_comment.html.erb (Duration: 23.1ms | Allocations: 19215)
+  Rendered comments/_comment.html.erb (Duration: 23.3ms | Allocations: 19374)
+  Rendered comments/_comment.html.erb (Duration: 23.5ms | Allocations: 19533)
+  Rendered comments/_comment.html.erb (Duration: 23.7ms | Allocations: 19692)
+  Rendered comments/_comment.html.erb (Duration: 23.9ms | Allocations: 19851)
+  Rendered comments/_comment.html.erb (Duration: 24.1ms | Allocations: 20010)
+  Rendered comments/_comment.html.erb (Duration: 24.3ms | Allocations: 20169)
+  Rendered comments/_comment.html.erb (Duration: 24.5ms | Allocations: 20328)
+  Rendered comments/_comment.html.erb (Duration: 24.7ms | Allocations: 20487)
+  Rendered comments/_comment.html.erb (Duration: 24.9ms | Allocations: 20646)
+  Rendered comments/_comment.html.erb (Duration: 25.1ms | Allocations: 20805)
+  Rendered comments/_comment.html.erb (Duration: 25.3ms | Allocations: 20964)
+  Rendered comments/_comment.html.erb (Duration: 25.6ms | Allocations: 21123)
+  Rendered comments/_comment.html.erb (Duration: 25.9ms | Allocations: 21282)
+  Rendered comments/_comment.html.erb (Duration: 26.1ms | Allocations: 21441)
+  Rendered comments/_comment.html.erb (Duration: 26.4ms | Allocations: 21600)
+  Rendered comments/_comment.html.erb (Duration: 26.6ms | Allocations: 21759)
+  Rendered comments/_comment.html.erb (Duration: 26.9ms | Allocations: 21918)
+  Rendered comments/_comment.html.erb (Duration: 27.2ms | Allocations: 22077)
+  Rendered comments/_comment.html.erb (Duration: 27.4ms | Allocations: 22236)
+  Rendered comments/_comment.html.erb (Duration: 27.6ms | Allocations: 22395)
+  Rendered comments/_comment.html.erb (Duration: 27.8ms | Allocations: 22554)
+  Rendered comments/_comment.html.erb (Duration: 28.0ms | Allocations: 22713)
+  Rendered comments/_comment.html.erb (Duration: 28.2ms | Allocations: 22872)
+  Rendered comments/_comment.html.erb (Duration: 28.4ms | Allocations: 23031)
+  Rendered comments/_comment.html.erb (Duration: 28.6ms | Allocations: 23190)
+  Rendered comments/_comment.html.erb (Duration: 28.8ms | Allocations: 23349)
+  Rendered comments/_comment.html.erb (Duration: 29.0ms | Allocations: 23508)
+  Rendered comments/_comment.html.erb (Duration: 29.2ms | Allocations: 23667)
+  Rendered comments/_comment.html.erb (Duration: 29.4ms | Allocations: 23826)
+  Rendered comments/_comment.html.erb (Duration: 29.6ms | Allocations: 23985)
+  Rendered comments/_comment.html.erb (Duration: 29.8ms | Allocations: 24144)
+  Rendered comments/_comment.html.erb (Duration: 30.0ms | Allocations: 24303)
+  Rendered comments/_comment.html.erb (Duration: 30.3ms | Allocations: 24462)
+  Rendered comments/_comment.html.erb (Duration: 30.5ms | Allocations: 24621)
+  Rendered comments/_comment.html.erb (Duration: 30.7ms | Allocations: 24780)
+  Rendered comments/_comment.html.erb (Duration: 30.9ms | Allocations: 24939)
+  Rendered comments/_comment.html.erb (Duration: 31.2ms | Allocations: 25098)
+  Rendered comments/_comment.html.erb (Duration: 31.4ms | Allocations: 25257)
+  Rendered comments/_comment.html.erb (Duration: 31.6ms | Allocations: 25416)
+  Rendered comments/_comment.html.erb (Duration: 31.8ms | Allocations: 25575)
+  Rendered comments/_comment.html.erb (Duration: 31.9ms | Allocations: 25734)
+  Rendered comments/_comment.html.erb (Duration: 32.1ms | Allocations: 25893)
+  Rendered comments/_comment.html.erb (Duration: 32.3ms | Allocations: 26052)
+  Rendered comments/_comment.html.erb (Duration: 32.6ms | Allocations: 26211)
+  Rendered comments/_comment.html.erb (Duration: 32.8ms | Allocations: 26370)
+  Rendered comments/_comment.html.erb (Duration: 33.0ms | Allocations: 26529)
+  Rendered comments/_comment.html.erb (Duration: 33.2ms | Allocations: 26688)
+  Rendered comments/_comment.html.erb (Duration: 33.4ms | Allocations: 26847)
+  Rendered comments/_comment.html.erb (Duration: 33.6ms | Allocations: 27006)
+  Rendered comments/_comment.html.erb (Duration: 33.8ms | Allocations: 27165)
+  Rendered comments/_comment.html.erb (Duration: 34.0ms | Allocations: 27324)
+  Rendered comments/_comment.html.erb (Duration: 34.5ms | Allocations: 27483)
+  Rendered comments/_comment.html.erb (Duration: 34.7ms | Allocations: 27642)
+  Rendered comments/_comment.html.erb (Duration: 34.9ms | Allocations: 27801)
+  Rendered comments/_comment.html.erb (Duration: 35.1ms | Allocations: 27960)
+  Rendered comments/_comment.html.erb (Duration: 35.3ms | Allocations: 28119)
+  Rendered comments/_comment.html.erb (Duration: 35.5ms | Allocations: 28278)
+  Rendered comments/_comment.html.erb (Duration: 35.7ms | Allocations: 28437)
+  Rendered comments/_comment.html.erb (Duration: 36.2ms | Allocations: 28596)
+  Rendered comments/_comment.html.erb (Duration: 36.5ms | Allocations: 28755)
+  Rendered comments/_comment.html.erb (Duration: 36.7ms | Allocations: 28914)
+  Rendered comments/_comment.html.erb (Duration: 37.1ms | Allocations: 29073)
+  Rendered comments/_comment.html.erb (Duration: 37.3ms | Allocations: 29232)
+  Rendered comments/_comment.html.erb (Duration: 37.5ms | Allocations: 29391)
+  Rendered comments/_comment.html.erb (Duration: 39.1ms | Allocations: 29550)
+  Rendered comments/_comment.html.erb (Duration: 39.3ms | Allocations: 29709)
+  Rendered comments/_comment.html.erb (Duration: 39.5ms | Allocations: 29868)
+  Rendered comments/_comment.html.erb (Duration: 39.7ms | Allocations: 30027)
+  Rendered comments/_comment.html.erb (Duration: 39.9ms | Allocations: 30186)
+  Rendered comments/_comment.html.erb (Duration: 40.1ms | Allocations: 30345)
+  Rendered comments/_comment.html.erb (Duration: 40.4ms | Allocations: 30504)
+  Rendered comments/_comment.html.erb (Duration: 40.7ms | Allocations: 30663)
+  Rendered comments/_comment.html.erb (Duration: 40.9ms | Allocations: 30822)
+  Rendered comments/_comment.html.erb (Duration: 41.1ms | Allocations: 30981)
+  Rendered comments/_comment.html.erb (Duration: 41.4ms | Allocations: 31140)
+  Rendered comments/_comment.html.erb (Duration: 41.7ms | Allocations: 31299)
+  Rendered comments/_comment.html.erb (Duration: 42.0ms | Allocations: 31458)
+  Rendered comments/_comment.html.erb (Duration: 42.4ms | Allocations: 31617)
+  Rendered comments/_comment.html.erb (Duration: 42.6ms | Allocations: 31776)
+  Rendered comments/_comment.html.erb (Duration: 42.8ms | Allocations: 31935)
+  Rendered comments/_comment.html.erb (Duration: 43.1ms | Allocations: 32094)
+  Rendered comments/_comment.html.erb (Duration: 43.4ms | Allocations: 32253)
+  Rendered comments/_comment.html.erb (Duration: 43.6ms | Allocations: 32412)
+  Rendered comments/_comment.html.erb (Duration: 43.9ms | Allocations: 32571)
+  Rendered comments/_comment.html.erb (Duration: 44.1ms | Allocations: 32730)
+  Rendered comments/_comment.html.erb (Duration: 44.3ms | Allocations: 32889)
+  Rendered comments/_comment.html.erb (Duration: 44.5ms | Allocations: 33048)
+  Rendered comments/_comment.html.erb (Duration: 44.7ms | Allocations: 33207)
+  Rendered comments/_comment.html.erb (Duration: 44.9ms | Allocations: 33366)
+  Rendered comments/_comment.html.erb (Duration: 45.1ms | Allocations: 33525)
+  Rendered comments/_comment.html.erb (Duration: 45.3ms | Allocations: 33684)
+  Rendered comments/_comment.html.erb (Duration: 45.6ms | Allocations: 33843)
+  Rendered comments/_comment.html.erb (Duration: 45.9ms | Allocations: 34002)
+  Rendered comments/_comment.html.erb (Duration: 46.1ms | Allocations: 34161)
+  Rendered comments/_comment.html.erb (Duration: 46.3ms | Allocations: 34320)
+  Rendered comments/_comment.html.erb (Duration: 46.5ms | Allocations: 34479)
+  Rendered comments/_comment.html.erb (Duration: 46.7ms | Allocations: 34638)
+  Rendered comments/_comment.html.erb (Duration: 46.9ms | Allocations: 34797)
+  Rendered comments/_comment.html.erb (Duration: 47.1ms | Allocations: 34956)
+  Rendered comments/_comment.html.erb (Duration: 47.3ms | Allocations: 35115)
+  Rendered comments/_comment.html.erb (Duration: 47.5ms | Allocations: 35274)
+  Rendered comments/_comment.html.erb (Duration: 47.7ms | Allocations: 35433)
+  Rendered comments/_comment.html.erb (Duration: 47.9ms | Allocations: 35592)
+  Rendered comments/_comment.html.erb (Duration: 48.1ms | Allocations: 35751)
+  Rendered comments/_comment.html.erb (Duration: 48.3ms | Allocations: 35910)
+  Rendered comments/_comment.html.erb (Duration: 48.5ms | Allocations: 36069)
+  Rendered comments/_comment.html.erb (Duration: 48.8ms | Allocations: 36228)
+  Rendered comments/_comment.html.erb (Duration: 49.0ms | Allocations: 36387)
+  Rendered comments/_comment.html.erb (Duration: 49.2ms | Allocations: 36546)
+  Rendered comments/_comment.html.erb (Duration: 49.7ms | Allocations: 36705)
+  Rendered comments/_comment.html.erb (Duration: 49.9ms | Allocations: 36864)
+  Rendered comments/_comment.html.erb (Duration: 50.3ms | Allocations: 37023)
+  Rendered comments/_comment.html.erb (Duration: 50.5ms | Allocations: 37182)
+  Rendered comments/_comment.html.erb (Duration: 50.7ms | Allocations: 37341)
+  Rendered comments/_comment.html.erb (Duration: 50.9ms | Allocations: 37500)
+  Rendered comments/_comment.html.erb (Duration: 51.1ms | Allocations: 37659)
+  Rendered comments/_comment.html.erb (Duration: 51.3ms | Allocations: 37818)
+  Rendered comments/_comment.html.erb (Duration: 51.7ms | Allocations: 37977)
+  Rendered comments/_comment.html.erb (Duration: 51.9ms | Allocations: 38136)
+  Rendered comments/_comment.html.erb (Duration: 52.1ms | Allocations: 38295)
+  Rendered comments/_comment.html.erb (Duration: 52.3ms | Allocations: 38454)
+  Rendered comments/_comment.html.erb (Duration: 52.5ms | Allocations: 38613)
+  Rendered comments/_comment.html.erb (Duration: 52.7ms | Allocations: 38772)
+  Rendered comments/_comment.html.erb (Duration: 52.9ms | Allocations: 38931)
+  Rendered comments/_comment.html.erb (Duration: 53.1ms | Allocations: 39090)
+  Rendered comments/_comment.html.erb (Duration: 53.3ms | Allocations: 39249)
+  Rendered comments/_comment.html.erb (Duration: 53.6ms | Allocations: 39408)
+  Rendered comments/_comment.html.erb (Duration: 53.8ms | Allocations: 39567)
+  Rendered comments/_comment.html.erb (Duration: 54.0ms | Allocations: 39726)
+  Rendered comments/_comment.html.erb (Duration: 54.3ms | Allocations: 39885)
+  Rendered comments/_comment.html.erb (Duration: 54.5ms | Allocations: 40044)
+  Rendered comments/_comment.html.erb (Duration: 54.7ms | Allocations: 40203)
+  Rendered comments/_comment.html.erb (Duration: 54.9ms | Allocations: 40362)
+  Rendered comments/_comment.html.erb (Duration: 55.1ms | Allocations: 40521)
+  Rendered comments/_comment.html.erb (Duration: 55.3ms | Allocations: 40680)
+  Rendered comments/_comment.html.erb (Duration: 55.5ms | Allocations: 40839)
+  Rendered comments/_comment.html.erb (Duration: 55.7ms | Allocations: 40998)
+  Rendered comments/_comment.html.erb (Duration: 55.9ms | Allocations: 41157)
+  Rendered comments/_comment.html.erb (Duration: 56.1ms | Allocations: 41316)
+  Rendered comments/_comment.html.erb (Duration: 56.3ms | Allocations: 41475)
+  Rendered comments/_comment.html.erb (Duration: 56.5ms | Allocations: 41634)
+  Rendered comments/_comment.html.erb (Duration: 56.8ms | Allocations: 41793)
+  Rendered comments/_comment.html.erb (Duration: 57.0ms | Allocations: 41952)
+  Rendered comments/_comment.html.erb (Duration: 57.2ms | Allocations: 42111)
+  Rendered comments/_comment.html.erb (Duration: 57.4ms | Allocations: 42270)
+  Rendered comments/_comment.html.erb (Duration: 57.8ms | Allocations: 42429)
+  Rendered comments/_comment.html.erb (Duration: 58.0ms | Allocations: 42588)
+  Rendered comments/_comment.html.erb (Duration: 58.2ms | Allocations: 42747)
+  Rendered comments/_comment.html.erb (Duration: 58.5ms | Allocations: 42906)
+  Rendered comments/_comment.html.erb (Duration: 58.8ms | Allocations: 43065)
+  Rendered comments/_comment.html.erb (Duration: 59.3ms | Allocations: 43224)
+  Rendered comments/_comment.html.erb (Duration: 59.6ms | Allocations: 43383)
+  Rendered comments/_comment.html.erb (Duration: 59.9ms | Allocations: 43542)
+  Rendered comments/_comment.html.erb (Duration: 60.2ms | Allocations: 43701)
+  Rendered comments/_comment.html.erb (Duration: 60.5ms | Allocations: 43860)
+  Rendered comments/_comment.html.erb (Duration: 60.7ms | Allocations: 44019)
+  Rendered comments/_comment.html.erb (Duration: 61.0ms | Allocations: 44178)
+  Rendered comments/_comment.html.erb (Duration: 61.2ms | Allocations: 44337)
+  Rendered comments/_comment.html.erb (Duration: 61.5ms | Allocations: 44496)
+  Rendered comments/_comment.html.erb (Duration: 61.8ms | Allocations: 44655)
+  Rendered comments/_comment.html.erb (Duration: 62.1ms | Allocations: 44814)
+  Rendered comments/_comment.html.erb (Duration: 62.4ms | Allocations: 44973)
+  Rendered comments/_comment.html.erb (Duration: 62.6ms | Allocations: 45132)
+  Rendered comments/_comment.html.erb (Duration: 62.8ms | Allocations: 45291)
+  Rendered comments/_comment.html.erb (Duration: 63.2ms | Allocations: 45450)
+  Rendered comments/_comment.html.erb (Duration: 63.5ms | Allocations: 45609)
+  Rendered comments/_comment.html.erb (Duration: 65.6ms | Allocations: 45768)
+  Rendered comments/_comment.html.erb (Duration: 65.9ms | Allocations: 45927)
+  Rendered comments/_comment.html.erb (Duration: 66.2ms | Allocations: 46086)
+  Rendered comments/_comment.html.erb (Duration: 66.5ms | Allocations: 46245)
+  Rendered comments/_comment.html.erb (Duration: 67.0ms | Allocations: 46404)
+  Rendered comments/_comment.html.erb (Duration: 67.3ms | Allocations: 46563)
+  Rendered comments/_comment.html.erb (Duration: 67.7ms | Allocations: 46722)
+  Rendered comments/_comment.html.erb (Duration: 67.9ms | Allocations: 46881)
+  Rendered comments/_comment.html.erb (Duration: 68.1ms | Allocations: 47040)
+  Rendered comments/_comment.html.erb (Duration: 68.3ms | Allocations: 47199)
+  Rendered comments/_comment.html.erb (Duration: 68.6ms | Allocations: 47358)
+  Rendered comments/_comment.html.erb (Duration: 68.9ms | Allocations: 47517)
+  Rendered comments/_comment.html.erb (Duration: 69.1ms | Allocations: 47676)
+  Rendered comments/_comment.html.erb (Duration: 69.4ms | Allocations: 47835)
+  Rendered comments/_comment.html.erb (Duration: 69.8ms | Allocations: 47994)
+  Rendered comments/_comment.html.erb (Duration: 70.1ms | Allocations: 48153)
+  Rendered comments/_comment.html.erb (Duration: 70.4ms | Allocations: 48312)
+  Rendered comments/_comment.html.erb (Duration: 70.7ms | Allocations: 48471)
+  Rendered comments/_comment.html.erb (Duration: 71.0ms | Allocations: 48630)
+  Rendered comments/_comment.html.erb (Duration: 71.2ms | Allocations: 48789)
+  Rendered comments/_comment.html.erb (Duration: 71.4ms | Allocations: 48948)
+  Rendered comments/_comment.html.erb (Duration: 71.6ms | Allocations: 49107)
+  Rendered comments/_comment.html.erb (Duration: 71.8ms | Allocations: 49266)
+  Rendered comments/_comment.html.erb (Duration: 72.1ms | Allocations: 49425)
+  Rendered comments/_comment.html.erb (Duration: 72.3ms | Allocations: 49584)
+  Rendered comments/_comment.html.erb (Duration: 72.5ms | Allocations: 49743)
+  Rendered comments/_comment.html.erb (Duration: 72.7ms | Allocations: 49902)
+  Rendered comments/_comment.html.erb (Duration: 72.9ms | Allocations: 50061)
+  Rendered comments/_comment.html.erb (Duration: 73.2ms | Allocations: 50220)
+  Rendered comments/_comment.html.erb (Duration: 73.5ms | Allocations: 50379)
+  Rendered comments/_comment.html.erb (Duration: 73.7ms | Allocations: 50538)
+  Rendered comments/_comment.html.erb (Duration: 73.9ms | Allocations: 50697)
+  Rendered comments/_comment.html.erb (Duration: 74.1ms | Allocations: 50856)
+  Rendered comments/_comment.html.erb (Duration: 74.2ms | Allocations: 51015)
+  Rendered comments/_comment.html.erb (Duration: 74.6ms | Allocations: 51174)
+  Rendered comments/_comment.html.erb (Duration: 74.9ms | Allocations: 51333)
+  Rendered comments/_comment.html.erb (Duration: 75.1ms | Allocations: 51492)
+  Rendered comments/_comment.html.erb (Duration: 75.3ms | Allocations: 51651)
+  Rendered comments/_comment.html.erb (Duration: 75.5ms | Allocations: 51810)
+  Rendered comments/_comment.html.erb (Duration: 75.7ms | Allocations: 51969)
+  Rendered comments/_comment.html.erb (Duration: 75.9ms | Allocations: 52128)
+  Rendered comments/_comment.html.erb (Duration: 76.1ms | Allocations: 52287)
+  Rendered comments/_comment.html.erb (Duration: 76.4ms | Allocations: 52446)
+  Rendered comments/_comment.html.erb (Duration: 76.6ms | Allocations: 52605)
+  Rendered comments/_comment.html.erb (Duration: 76.7ms | Allocations: 52764)
+  Rendered comments/_comment.html.erb (Duration: 77.1ms | Allocations: 52923)
+  Rendered comments/_comment.html.erb (Duration: 77.3ms | Allocations: 53082)
+  Rendered comments/_comment.html.erb (Duration: 77.5ms | Allocations: 53241)
+  Rendered comments/_comment.html.erb (Duration: 77.7ms | Allocations: 53400)
+  Rendered comments/_comment.html.erb (Duration: 77.9ms | Allocations: 53559)
+  Rendered comments/_comment.html.erb (Duration: 78.1ms | Allocations: 53718)
+  Rendered comments/_comment.html.erb (Duration: 78.3ms | Allocations: 53877)
+  Rendered comments/_comment.html.erb (Duration: 78.5ms | Allocations: 54036)
+  Rendered comments/_comment.html.erb (Duration: 78.7ms | Allocations: 54195)
+  Rendered comments/_comment.html.erb (Duration: 78.9ms | Allocations: 54354)
+  Rendered comments/_comment.html.erb (Duration: 79.1ms | Allocations: 54513)
+  Rendered comments/_comment.html.erb (Duration: 79.3ms | Allocations: 54672)
+  Rendered comments/_comment.html.erb (Duration: 79.5ms | Allocations: 54831)
+  Rendered comments/_comment.html.erb (Duration: 79.7ms | Allocations: 54990)
+  Rendered comments/_comment.html.erb (Duration: 79.9ms | Allocations: 55149)
+  Rendered comments/_comment.html.erb (Duration: 80.1ms | Allocations: 55308)
+  Rendered comments/_comment.html.erb (Duration: 80.4ms | Allocations: 55467)
+  Rendered comments/_comment.html.erb (Duration: 80.6ms | Allocations: 55626)
+  Rendered comments/_comment.html.erb (Duration: 80.7ms | Allocations: 55785)
+  Rendered comments/_comment.html.erb (Duration: 80.9ms | Allocations: 55944)
+  Rendered comments/_comment.html.erb (Duration: 81.1ms | Allocations: 56103)
+  Rendered comments/_comment.html.erb (Duration: 81.3ms | Allocations: 56262)
+  Rendered comments/_comment.html.erb (Duration: 81.5ms | Allocations: 56421)
+  Rendered comments/_comment.html.erb (Duration: 81.7ms | Allocations: 56580)
+  Rendered comments/_comment.html.erb (Duration: 81.9ms | Allocations: 56739)
+  Rendered comments/_comment.html.erb (Duration: 82.1ms | Allocations: 56898)
+  Rendered comments/_comment.html.erb (Duration: 82.3ms | Allocations: 57057)
+  Rendered comments/_comment.html.erb (Duration: 82.5ms | Allocations: 57216)
+  Rendered comments/_comment.html.erb (Duration: 82.9ms | Allocations: 57375)
+  Rendered comments/_comment.html.erb (Duration: 83.1ms | Allocations: 57534)
+  Rendered comments/_comment.html.erb (Duration: 83.3ms | Allocations: 57693)
+  Rendered comments/_comment.html.erb (Duration: 83.5ms | Allocations: 57852)
+  Rendered comments/_comment.html.erb (Duration: 83.7ms | Allocations: 58011)
+  Rendered comments/_comment.html.erb (Duration: 83.9ms | Allocations: 58170)
+  Rendered comments/_comment.html.erb (Duration: 84.1ms | Allocations: 58329)
+  Rendered comments/_comment.html.erb (Duration: 84.4ms | Allocations: 58488)
+  Rendered comments/_comment.html.erb (Duration: 84.6ms | Allocations: 58647)
+  Rendered comments/_comment.html.erb (Duration: 84.8ms | Allocations: 58806)
+  Rendered comments/_comment.html.erb (Duration: 85.0ms | Allocations: 58965)
+  Rendered comments/_comment.html.erb (Duration: 85.2ms | Allocations: 59124)
+  Rendered comments/_comment.html.erb (Duration: 85.4ms | Allocations: 59283)
+  Rendered comments/_comment.html.erb (Duration: 85.6ms | Allocations: 59442)
+  Rendered comments/_comment.html.erb (Duration: 85.8ms | Allocations: 59601)
+  Rendered comments/_comment.html.erb (Duration: 86.0ms | Allocations: 59760)
+  Rendered comments/_comment.html.erb (Duration: 86.1ms | Allocations: 59919)
+  Rendered comments/_comment.html.erb (Duration: 86.3ms | Allocations: 60078)
+  Rendered comments/_comment.html.erb (Duration: 86.5ms | Allocations: 60237)
+  Rendered comments/_comment.html.erb (Duration: 86.8ms | Allocations: 60396)
+  Rendered comments/_comment.html.erb (Duration: 88.3ms | Allocations: 60555)
+  Rendered comments/_comment.html.erb (Duration: 88.5ms | Allocations: 60714)
+  Rendered comments/_comment.html.erb (Duration: 88.7ms | Allocations: 60873)
+  Rendered comments/_comment.html.erb (Duration: 89.1ms | Allocations: 61032)
+  Rendered comments/_comment.html.erb (Duration: 89.5ms | Allocations: 61191)
+  Rendered comments/_comment.html.erb (Duration: 89.8ms | Allocations: 61350)
+  Rendered comments/_comment.html.erb (Duration: 90.3ms | Allocations: 61509)
+  Rendered comments/_comment.html.erb (Duration: 90.5ms | Allocations: 61668)
+  Rendered comments/_comment.html.erb (Duration: 90.7ms | Allocations: 61827)
+  Rendered comments/_comment.html.erb (Duration: 90.9ms | Allocations: 61986)
+  Rendered comments/_comment.html.erb (Duration: 91.1ms | Allocations: 62145)
+  Rendered comments/_comment.html.erb (Duration: 91.3ms | Allocations: 62304)
+  Rendered comments/_comment.html.erb (Duration: 91.6ms | Allocations: 62463)
+  Rendered comments/_comment.html.erb (Duration: 91.8ms | Allocations: 62622)
+  Rendered comments/_comment.html.erb (Duration: 92.0ms | Allocations: 62781)
+  Rendered comments/_comment.html.erb (Duration: 92.2ms | Allocations: 62940)
+  Rendered comments/_comment.html.erb (Duration: 92.5ms | Allocations: 63099)
+  Rendered comments/_comment.html.erb (Duration: 92.7ms | Allocations: 63258)
+  Rendered comments/_comment.html.erb (Duration: 93.1ms | Allocations: 63417)
+  Rendered comments/_comment.html.erb (Duration: 93.3ms | Allocations: 63576)
+  Rendered comments/_comment.html.erb (Duration: 93.5ms | Allocations: 63735)
+  Rendered comments/_comment.html.erb (Duration: 93.9ms | Allocations: 63894)
+  Rendered comments/_comment.html.erb (Duration: 94.2ms | Allocations: 64053)
+  Rendered comments/_comment.html.erb (Duration: 94.4ms | Allocations: 64212)
+  Rendered comments/_comment.html.erb (Duration: 95.5ms | Allocations: 64371)
+  Rendered comments/_comment.html.erb (Duration: 95.7ms | Allocations: 64530)
+  Rendered comments/_comment.html.erb (Duration: 95.9ms | Allocations: 64689)
+  Rendered comments/_comment.html.erb (Duration: 96.2ms | Allocations: 64848)
+  Rendered comments/_comment.html.erb (Duration: 96.4ms | Allocations: 65007)
+  Rendered comments/_comment.html.erb (Duration: 96.6ms | Allocations: 65166)
+  Rendered comments/_comment.html.erb (Duration: 96.8ms | Allocations: 65325)
+  Rendered comments/_comment.html.erb (Duration: 97.0ms | Allocations: 65484)
+  Rendered comments/_comment.html.erb (Duration: 97.2ms | Allocations: 65643)
+  Rendered comments/_comment.html.erb (Duration: 97.4ms | Allocations: 65802)
+  Rendered comments/_comment.html.erb (Duration: 97.6ms | Allocations: 65961)
+  Rendered comments/_comment.html.erb (Duration: 97.8ms | Allocations: 66120)
+  Rendered comments/_comment.html.erb (Duration: 98.0ms | Allocations: 66279)
+  Rendered comments/_comment.html.erb (Duration: 98.2ms | Allocations: 66438)
+  Rendered comments/_comment.html.erb (Duration: 98.4ms | Allocations: 66597)
+  Rendered comments/_comment.html.erb (Duration: 98.6ms | Allocations: 66756)
+  Rendered comments/_comment.html.erb (Duration: 98.8ms | Allocations: 66915)
+  Rendered comments/_comment.html.erb (Duration: 99.0ms | Allocations: 67074)
+  Rendered comments/_comment.html.erb (Duration: 99.2ms | Allocations: 67233)
+  Rendered comments/_comment.html.erb (Duration: 99.4ms | Allocations: 67392)
+  Rendered comments/_comment.html.erb (Duration: 99.6ms | Allocations: 67551)
+  Rendered comments/_comment.html.erb (Duration: 99.8ms | Allocations: 67710)
+  Rendered comments/_comment.html.erb (Duration: 100.3ms | Allocations: 67869)
+  Rendered comments/_comment.html.erb (Duration: 100.5ms | Allocations: 68028)
+  Rendered comments/_comment.html.erb (Duration: 100.7ms | Allocations: 68187)
+  Rendered comments/_comment.html.erb (Duration: 100.9ms | Allocations: 68346)
+  Rendered comments/_comment.html.erb (Duration: 101.1ms | Allocations: 68505)
+  Rendered comments/_comment.html.erb (Duration: 101.3ms | Allocations: 68664)
+  Rendered comments/_comment.html.erb (Duration: 101.5ms | Allocations: 68823)
+  Rendered comments/_comment.html.erb (Duration: 101.7ms | Allocations: 68982)
+  Rendered comments/_comment.html.erb (Duration: 101.9ms | Allocations: 69141)
+  Rendered comments/_comment.html.erb (Duration: 102.2ms | Allocations: 69300)
+  Rendered comments/_comment.html.erb (Duration: 102.7ms | Allocations: 69459)
+  Rendered comments/_comment.html.erb (Duration: 102.9ms | Allocations: 69618)
+  Rendered comments/_comment.html.erb (Duration: 103.1ms | Allocations: 69777)
+  Rendered comments/_comment.html.erb (Duration: 103.3ms | Allocations: 69936)
+  Rendered comments/_comment.html.erb (Duration: 103.5ms | Allocations: 70095)
+  Rendered comments/_comment.html.erb (Duration: 103.8ms | Allocations: 70254)
+  Rendered comments/_comment.html.erb (Duration: 104.0ms | Allocations: 70413)
+  Rendered comments/_comment.html.erb (Duration: 104.2ms | Allocations: 70572)
+  Rendered comments/_comment.html.erb (Duration: 104.6ms | Allocations: 70731)
+  Rendered comments/_comment.html.erb (Duration: 105.0ms | Allocations: 70890)
+  Rendered comments/_comment.html.erb (Duration: 105.2ms | Allocations: 71049)
+  Rendered comments/_comment.html.erb (Duration: 105.4ms | Allocations: 71208)
+  Rendered comments/_comment.html.erb (Duration: 105.6ms | Allocations: 71367)
+  Rendered comments/_comment.html.erb (Duration: 105.8ms | Allocations: 71526)
+  Rendered comments/_comment.html.erb (Duration: 106.0ms | Allocations: 71685)
+  Rendered comments/_comment.html.erb (Duration: 106.4ms | Allocations: 71844)
+  Rendered comments/_comment.html.erb (Duration: 106.6ms | Allocations: 72003)
+  Rendered comments/_comment.html.erb (Duration: 106.8ms | Allocations: 72162)
+  Rendered comments/_comment.html.erb (Duration: 107.0ms | Allocations: 72321)
+  Rendered comments/_comment.html.erb (Duration: 107.3ms | Allocations: 72480)
+  Rendered comments/_comment.html.erb (Duration: 107.5ms | Allocations: 72639)
+  Rendered comments/_comment.html.erb (Duration: 107.7ms | Allocations: 72798)
+  Rendered comments/_comment.html.erb (Duration: 107.9ms | Allocations: 72957)
+  Rendered comments/_comment.html.erb (Duration: 108.2ms | Allocations: 73116)
+  Rendered comments/_comment.html.erb (Duration: 108.4ms | Allocations: 73275)
+  Rendered comments/_comment.html.erb (Duration: 108.7ms | Allocations: 73434)
+  Rendered comments/_comment.html.erb (Duration: 109.0ms | Allocations: 73593)
+  Rendered comments/_comment.html.erb (Duration: 109.2ms | Allocations: 73752)
+  Rendered comments/_comment.html.erb (Duration: 109.7ms | Allocations: 73911)
+  Rendered comments/_comment.html.erb (Duration: 109.9ms | Allocations: 74070)
+  Rendered comments/_comment.html.erb (Duration: 110.1ms | Allocations: 74229)
+  Rendered comments/_comment.html.erb (Duration: 110.4ms | Allocations: 74388)
+  Rendered comments/_comment.html.erb (Duration: 110.6ms | Allocations: 74547)
+  Rendered comments/_comment.html.erb (Duration: 110.8ms | Allocations: 74706)
+  Rendered comments/_comment.html.erb (Duration: 111.0ms | Allocations: 74865)
+  Rendered comments/_comment.html.erb (Duration: 111.4ms | Allocations: 75024)
+  Rendered comments/_comment.html.erb (Duration: 112.9ms | Allocations: 75183)
+  Rendered comments/_comment.html.erb (Duration: 113.3ms | Allocations: 75342)
+  Rendered comments/_comment.html.erb (Duration: 113.8ms | Allocations: 75501)
+  Rendered comments/_comment.html.erb (Duration: 114.0ms | Allocations: 75660)
+  Rendered comments/_comment.html.erb (Duration: 114.2ms | Allocations: 75819)
+  Rendered comments/_comment.html.erb (Duration: 114.5ms | Allocations: 75978)
+  Rendered comments/_comment.html.erb (Duration: 114.7ms | Allocations: 76137)
+  Rendered comments/_comment.html.erb (Duration: 114.9ms | Allocations: 76296)
+  Rendered comments/_comment.html.erb (Duration: 115.1ms | Allocations: 76455)
+  Rendered comments/_comment.html.erb (Duration: 115.3ms | Allocations: 76614)
+  Rendered comments/_comment.html.erb (Duration: 115.5ms | Allocations: 76773)
+  Rendered comments/_comment.html.erb (Duration: 115.7ms | Allocations: 76932)
+  Rendered comments/_comment.html.erb (Duration: 116.0ms | Allocations: 77091)
+  Rendered comments/_comment.html.erb (Duration: 116.2ms | Allocations: 77250)
+  Rendered comments/_comment.html.erb (Duration: 117.3ms | Allocations: 78034)
+  Rendered posts/show.html.erb within layouts/application (Duration: 125.7ms | Allocations: 83701)
+  Rendered layout layouts/application.html.erb (Duration: 126.0ms | Allocations: 83795)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 1.3ms | Allocations: 86015)
+
+
+
+SystemStackError - stack level too deep:
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/comments/_comment.html.erb:27
+  app/views/comments/_comment.html.erb:26:in `each'
+  app/views/comments/_comment.html.erb:26
+  app/views/posts/show.html.erb:21
+  app/views/posts/show.html.erb:20:in `each'
+  app/views/posts/show.html.erb:20
+  app/controllers/posts_controller.rb:26:in `show'
+
+Started POST "/__better_errors/c2047e838918f23c/variables" for ::1 at 2022-09-02 16:51:10 -0400
+Started GET "/posts/5" for ::1 at 2022-09-02 16:51:44 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 2.7ms | Allocations: 1089)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.1ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.0ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.2ms | Allocations: 807)
+  Rendered comments/_comment.html.erb (Duration: 2.9ms | Allocations: 1728)
+  Rendered comments/_comment.html.erb (Duration: 4.2ms | Allocations: 2511)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 0.8ms | Allocations: 760)
+  Rendered comments/_comment.html.erb (Duration: 1.7ms | Allocations: 1562)
+  Rendered comments/_comment.html.erb (Duration: 2.5ms | Allocations: 2391)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.2ms | Allocations: 807)
+  Rendered comments/_comment.html.erb (Duration: 5.6ms | Allocations: 1609)
+  Rendered comments/_comment.html.erb (Duration: 6.7ms | Allocations: 2438)
+  Rendered posts/show.html.erb within layouts/application (Duration: 26.5ms | Allocations: 13133)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 14971)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 1.6ms | Allocations: 17225)
+
+
+Started GET "/posts/reset.css" for ::1 at 2022-09-02 16:51:44 -0400
+Processing by PostsController#show as CSS
+  Parameters: {"id"=>"reset"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1057)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Post with 'id'=reset:
+  app/controllers/posts_controller.rb:23:in `show'
+
+Started GET "/posts/5" for ::1 at 2022-09-02 16:51:51 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" INNER JOIN "users" ON "users"."id" = "comments"."author_id" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/models/post.rb:30:in `comments_by_parent_id'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:1
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.0ms | Allocations: 721)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.0ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 2.9ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 1.0ms | Allocations: 807)
+  Rendered comments/_comment.html.erb (Duration: 2.5ms | Allocations: 1728)
+  Rendered comments/_comment.html.erb (Duration: 3.7ms | Allocations: 2510)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 0.8ms | Allocations: 760)
+  Rendered comments/_comment.html.erb (Duration: 1.9ms | Allocations: 1562)
+  Rendered comments/_comment.html.erb (Duration: 3.3ms | Allocations: 2391)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:2
+  Rendered comments/_comment.html.erb (Duration: 0.8ms | Allocations: 807)
+  Rendered comments/_comment.html.erb (Duration: 1.9ms | Allocations: 1609)
+  Rendered comments/_comment.html.erb (Duration: 3.2ms | Allocations: 2438)
+  Rendered posts/show.html.erb within layouts/application (Duration: 20.7ms | Allocations: 12080)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 13272)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 1.7ms | Allocations: 14900)
+
+
+Started GET "/posts/reset.css" for ::1 at 2022-09-02 16:51:51 -0400
+Processing by PostsController#show as CSS
+  Parameters: {"id"=>"reset"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1042)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Post with 'id'=reset:
+  app/controllers/posts_controller.rb:23:in `show'
+

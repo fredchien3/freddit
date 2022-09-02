@@ -21,4 +21,15 @@ class Post < ApplicationRecord
 
   has_many :comments,
     dependent: :destroy
+
+    
+  def comments_by_parent_id
+    hash = Hash.new { |h, k| h[k] = [] }
+
+    comments = Comment.where(post_id: self.id).joins(:author)
+    comments.each do |comment|
+      hash[comment.parent_comment_id] << comment
+    end
+    hash
+  end
 end

@@ -23,8 +23,8 @@
   <% end %>
 
   <ul>
-    <% comment.child_comments.each do |child_comment| %>
-      <%= render "comments/comment", comment: child_comment, post: post %>
+    <% comments_hash[comment.id].each do |child_comment| %>
+      <%= render "comments/comment", comment: child_comment, comments_hash: @comments_hash, post: @post %>
     <% end %>
   </ul>
 </li>

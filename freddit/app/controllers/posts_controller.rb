@@ -21,7 +21,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    # @all_comments = Comment.where(post_id: params[:id]).joins(:author)
+    @comments_hash = @post.comments_by_parent_id
     render :show
   end
 

@@ -17,7 +17,7 @@ Content: <%= @post.content %>
 <a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
 
 <ul>
-  <% @comments.each do |comment| %>
-    <%= render "comments/comment", comment: comment, post: @post %>
+  <% @comments_hash[nil].each do |comment| %>
+    <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
   <% end %>
 </ul>
