@@ -4,29 +4,34 @@
     <title>Freddit</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <%= csp_meta_tag %>
     <link rel="stylesheet" href="reset.css">
     <%= stylesheet_link_tag "application" %>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
   </head>
 
   <body>
     <header>
-      <a href="<%= root_url %>">Freddit</a>
+      <a href="<%= root_url %>" class="logo"><%= image_tag('cober.jpeg', alt: 'cober dog') %></a>
       <% if logged_in? %>
-        <p>Welcome, <%= current_user.username %></p>
-        <form action="<%= session_url %>" method="post">
-          <%= auth_token %>
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Log Out">
-        </form>
+        <div class="login-signup-buttons">
+          <p>Welcome, <%= current_user.username %></p>
+          <form action="<%= session_url %>" method="post">
+            <%= auth_token %>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Log Out">
+          </form>
+        </div>
       <% else %>
-        <p>Welcome, guest</p>
-        <a href="<%= new_session_url %>">Log In</a>
-        <a href="<%= new_user_url %>">Sign Up</a>
+        <div class="login-signup-buttons">
+          <a class="button white-button" href="<%= new_session_url %>">Log In</a>
+          <a class="button blue-button" href="<%= new_user_url %>">Sign Up</a>
+        </div>
       <% end %>
     </header>
-    <br>
-
     <div class="flash">
       <% if flash[:errors] %>
         <% flash[:errors].each do |error| %>
@@ -39,7 +44,10 @@
         <% end %>
       <% end %>
     </div>
-
-    <%= yield %>
+    <main>
+      <div class="main-column">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
