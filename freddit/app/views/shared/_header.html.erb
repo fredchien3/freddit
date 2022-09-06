@@ -1,0 +1,18 @@
+<header>
+  <a href="<%= root_url %>" class="logo"><%= image_tag('cober.jpeg', alt: 'cober dog') %></a>
+  <% if logged_in? %>
+    <div class="login-signup-buttons">
+      <p>Welcome, <%= current_user.username %></p>
+      <form action="<%= session_url %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out">
+      </form>
+    </div>
+  <% else %>
+    <div class="login-signup-buttons">
+      <a class="button white-button" href="<%= new_session_url %>">Log In</a>
+      <a class="button blue-button" href="<%= new_user_url %>">Sign Up</a>
+    </div>
+  <% end %>
+</header>

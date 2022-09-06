@@ -14,5 +14,6 @@
  *= require_self
  */
 
+ @import "flash.css";
  @import "header.css";
  @import "main.css";
