@@ -8,43 +8,111 @@ header {
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
   position: relative;
   overflow: hidden;
-  border-radius: 50%;
   margin-left: 20px;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  font-family: 'VAG Rounded Regular', Courier, sans-serif;
+  font-size: 21px;
+  font-weight: 900;
 }
 
-.logo img {
+#logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: inline;
   margin: 0 auto;
   height: 100%;
   width: auto;
+  margin-right: 10px;
+}
+
+.header-search {
+  position: relative;
+}
+
+#header-search {
+  display: flex;
+  box-sizing: border-box;
+  width: 658px;
+  height: 36px;
+  background-color: #F6F7F8;
+  border: 1px solid #EDEFF1;
+  border-radius: 4px;
+}
+
+#header-search:hover {
+  border: 1px solid #0079D3;
+}
+
+#header-search-mag {
+  position: absolute;
 }
 
 .login-signup-buttons {
   display: flex;
-
+  margin-right: 23px;
 }
 
 .button {
   border: 1px solid #0079D3;
-  border-radius: 32px;
-  height: 32px;
+  border-radius: 30px;
+  height: 30px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px 0 20px;
   font-weight: bold;
-  font-size: smaller;
-  margin: 0 3px 0 3px;
+  font-size: 14px;
+  margin: 0 9px 0 9px;
 }
 
-.blue-button {
+.button-white {
+  color: #0079D3;
+  padding: 0 40px 0 40px;
+}
+
+.button-white:hover {
+  background: #f5fafd;
+}
+
+.button-blue {
   color: white;
   background: #0079D3;
+  padding: 0 35px 0 35px;
 }
 
-.white-button {
-  color: #0079D3;
+.button-blue:hover {
+  background: #1484d6;
+}
+
+.header-dropdown-button {
+  box-sizing: border-box;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 20px 0 16px;
+  color: #808080;
+}
+
+.header-dropdown-button:hover {
+  border: 1px solid #EDEFF1;
+  cursor: pointer;
+}
+
+#user-icon {
+  font-size: 20px;
+}
+
+#dropdown-icon {
+  font-size: 12px;
 }

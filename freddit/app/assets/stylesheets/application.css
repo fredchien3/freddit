@@ -13,7 +13,12 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: 'VAG Rounded Regular';
+  src: url('VAG Rounded Regular.ttf') format('truetype');
+}
 
- @import "flash.css";
- @import "header.css";
- @import "main.css";
+@import "reset.css";
+@import "flash.css";
+@import "header.css";
+@import "main.css";

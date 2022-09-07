@@ -4,5 +4,12 @@
       <a class="post-card" href="<%= sub_url(sub) %>"><%= sub.title %></a>
     </li>
   <% end %>
+  <% 3.times do %>
+    <% ('FIGVAPER').split('').each do |letter| %>
+      <li>
+        <a class="post-card" href="#"><%= letter %></a>
+      </li>
+    <% end %>
+  <% end %>
 </ul>
 <a href="<%= new_sub_url %>">Create a new subfreddit!</a>

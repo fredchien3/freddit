@@ -1,5 +1,15 @@
 <header>
-  <a href="<%= root_url %>" class="logo"><%= image_tag('cober.jpeg', alt: 'cober dog') %></a>
+  
+  <a href="<%= root_url %>" class="logo">
+    <%= image_tag('cober.jpeg', alt: 'cober dog', id: 'logo') %>
+    freddit
+  </a>
+
+  <div class="header-search">
+    <i class="fa-solid fa-magnifying-glass" id="header-search-mag"></i>
+    <input type="search" id="header-search">
+  </div>
+
   <% if logged_in? %>
     <div class="login-signup-buttons">
       <p>Welcome, <%= current_user.username %></p>
@@ -11,8 +21,12 @@
     </div>
   <% else %>
     <div class="login-signup-buttons">
-      <a class="button white-button" href="<%= new_session_url %>">Log In</a>
-      <a class="button blue-button" href="<%= new_user_url %>">Sign Up</a>
+      <a class="button button-white" href="<%= new_session_url %>">Log In</a>
+      <a class="button button-blue" href="<%= new_user_url %>">Sign Up</a>
+      <div class="header-dropdown-button">
+        <i class="fa-regular fa-user" id="user-icon"></i>
+        <i class="fa-solid fa-chevron-down" id="dropdown-icon"></i>
+      </div>
     </div>
   <% end %>
 </header>
