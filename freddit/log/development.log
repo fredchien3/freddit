@@ -21366,3 +21366,768 @@ Processing by SubsController#index as HTML
 Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 1.0ms | Allocations: 9102)
 
 
+Started GET "/" for ::1 at 2022-09-08 09:13:27 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (1.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 31.8ms | Allocations: 4523)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 7.7ms | Allocations: 1319)
+  Rendered layout layouts/application.html.erb (Duration: 84.5ms | Allocations: 11726)
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 13.0ms | Allocations: 11955)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:13:44 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.5ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 69.0ms | Allocations: 8868)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 1.2ms | Allocations: 9100)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:13:56 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.2ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 8877)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 1.6ms | Allocations: 9109)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:26:52 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (1.0ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 4502)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.7ms | Allocations: 1319)
+  Rendered layout layouts/application.html.erb (Duration: 87.2ms | Allocations: 11713)
+Completed 200 OK in 109ms (Views: 108.9ms | ActiveRecord: 9.4ms | Allocations: 11942)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:27:41 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2189)
+  Rendered shared/_flash.html.erb (Duration: 1.2ms | Allocations: 279)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.4ms | Allocations: 1620)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | Allocations: 10623)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.9ms | Allocations: 11367)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:27:48 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.6ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 8882)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.9ms | Allocations: 9132)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:27:52 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.6ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 4768)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 1.2ms | Allocations: 5000)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:27:59 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.5ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 8873)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 1.2ms | Allocations: 9105)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:28:06 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.7ms | Allocations: 1285)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 8889)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 1.3ms | Allocations: 9120)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:28:54 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.8ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 67.8ms | Allocations: 8874)
+Completed 200 OK in 69ms (Views: 68.1ms | ActiveRecord: 1.0ms | Allocations: 9105)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:29:30 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.1ms | Allocations: 1287)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 8898)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 1.7ms | Allocations: 9131)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:29:42 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.1ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 8878)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 1.2ms | Allocations: 9110)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:29:50 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 8895)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 1.4ms | Allocations: 9126)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:29:54 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.0ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 4747)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 1.3ms | Allocations: 4979)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:29:58 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.4ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 53.7ms | Allocations: 8892)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 1.0ms | Allocations: 9123)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:30:22 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 3.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 8877)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.9ms | Allocations: 9108)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:30:34 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 8873)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 1.6ms | Allocations: 9105)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:30:44 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 4754)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 1.7ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:30:59 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.5ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 8878)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 1.2ms | Allocations: 9109)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:31:04 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (1.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.9ms | Allocations: 1287)
+  Rendered layout layouts/application.html.erb (Duration: 65.6ms | Allocations: 8878)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 2.4ms | Allocations: 9109)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:31:09 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (1.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.5ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 8869)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 2.1ms | Allocations: 9101)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:32:38 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2189)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 279)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.7ms | Allocations: 1615)
+  Rendered layout layouts/application.html.erb (Duration: 70.0ms | Allocations: 10621)
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 1.3ms | Allocations: 11363)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:36:13 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2184)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 279)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.2ms | Allocations: 1612)
+  Rendered layout layouts/application.html.erb (Duration: 73.9ms | Allocations: 10629)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 1.3ms | Allocations: 11391)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:36:34 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.8ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 66.1ms | Allocations: 8891)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 1.5ms | Allocations: 9141)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:36:46 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 51.4ms | Allocations: 8884)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.8ms | Allocations: 9116)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:37:42 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.1ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 8891)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.9ms | Allocations: 9122)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:37:51 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 7.7ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 8881)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 1.2ms | Allocations: 9112)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:38:36 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 7.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 8881)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 1.4ms | Allocations: 9113)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:38:49 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.4ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 8885)
+Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 1.3ms | Allocations: 9117)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:39:12 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.2ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 8902)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 1.4ms | Allocations: 9133)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:39:33 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.5ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 67.8ms | Allocations: 8899)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 1.6ms | Allocations: 9131)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:39:40 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (22.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 27.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 73.5ms | Allocations: 8893)
+Completed 200 OK in 75ms (Views: 51.8ms | ActiveRecord: 22.7ms | Allocations: 9124)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:40:23 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.7ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 64.3ms | Allocations: 8876)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.9ms | Allocations: 9108)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:40:47 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2189)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 279)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 6.8ms | Allocations: 1614)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 6348)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 1.2ms | Allocations: 7091)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:00 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 8975)
+Completed 200 OK in 69ms (Views: 67.3ms | ActiveRecord: 1.0ms | Allocations: 9225)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:04 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.7ms | Allocations: 1288)
+  Rendered layout layouts/application.html.erb (Duration: 53.2ms | Allocations: 8906)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 1.1ms | Allocations: 9138)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:08 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.1ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 8914)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 1.1ms | Allocations: 9146)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:12 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.6ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 8904)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.8ms | Allocations: 9136)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:16 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 7.1ms | Allocations: 1287)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 8901)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 1.3ms | Allocations: 9132)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:20 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.8ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4748)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 1.0ms | Allocations: 4980)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:23 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 8898)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 1.1ms | Allocations: 9129)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:28 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.5ms | Allocations: 1284)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4736)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.9ms | Allocations: 4968)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:41:46 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.8ms | Allocations: 1285)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 8898)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 1.2ms | Allocations: 9130)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:42:04 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.2ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 5.5ms | Allocations: 1287)
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 8907)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.9ms | Allocations: 9139)
+
+
+Started GET "/" for ::1 at 2022-09-08 09:42:26 -0400
+Processing by SubsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sub_id" IN ($1, $2)[0m  [["sub_id", 1], ["sub_id", 4]]
+  ↳ app/views/subs/index.html.erb:2
+  Rendered subs/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered shared/_header.html.erb (Duration: 4.6ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 8902)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 1.1ms | Allocations: 9134)
+
+

@@ -1,5 +1,5 @@
 header {
-  background: white;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,7 @@ header {
   border-bottom: 1px solid lightgray;
 }
 
-.logo {
+.logo-wrapper {
   position: relative;
   overflow: hidden;
   margin-left: 20px;
@@ -21,6 +21,7 @@ header {
   font-family: 'VAG Rounded Regular', Courier, sans-serif;
   font-size: 21px;
   font-weight: 900;
+  margin-right: 40px;
 }
 
 #logo {
@@ -34,11 +35,11 @@ header {
   margin-right: 10px;
 }
 
-.header-search {
+.header-search-wrapper {
   position: relative;
-}
-
-#header-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
   box-sizing: border-box;
   width: 658px;
@@ -46,17 +47,36 @@ header {
   background-color: #F6F7F8;
   border: 1px solid #EDEFF1;
   border-radius: 4px;
+  padding: 0 17px 0 15px;
 }
 
-#header-search:hover {
+.header-search-wrapper:hover {
+  border: 1px solid #0079D3;
+}
+
+#header-search-bar {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+}
+
+#header-search-bar:focus {
+  outline: none;
+}
+
+.header-search-wrapper:focus-within {
   border: 1px solid #0079D3;
 }
 
 #header-search-mag {
-  position: absolute;
+  color: #8E8C93;
+  font-size: 20px;
+  margin-right: 8px;
 }
 
-.login-signup-buttons {
+.login-signup-wrapper {
   display: flex;
   margin-right: 23px;
 }
@@ -79,17 +99,17 @@ header {
 }
 
 .button-white:hover {
-  background: #f5fafd;
+  background-color: #f5fafd;
 }
 
 .button-blue {
   color: white;
-  background: #0079D3;
+  background-color: #0079D3;
   padding: 0 35px 0 35px;
 }
 
 .button-blue:hover {
-  background: #1484d6;
+  background-color: #1484d6;
 }
 
 .header-dropdown-button {

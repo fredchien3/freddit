@@ -1,17 +1,17 @@
 <header>
   
-  <a href="<%= root_url %>" class="logo">
+  <a href="<%= root_url %>" class="logo-wrapper">
     <%= image_tag('cober.jpeg', alt: 'cober dog', id: 'logo') %>
     freddit
   </a>
 
-  <div class="header-search">
+  <div class="header-search-wrapper">
     <i class="fa-solid fa-magnifying-glass" id="header-search-mag"></i>
-    <input type="search" id="header-search">
+    <input type="search" id="header-search-bar" placeholder="Search Freddit">
   </div>
 
   <% if logged_in? %>
-    <div class="login-signup-buttons">
+    <div class="login-signup-wrapper">
       <p>Welcome, <%= current_user.username %></p>
       <form action="<%= session_url %>" method="post">
         <%= auth_token %>
@@ -20,7 +20,7 @@
       </form>
     </div>
   <% else %>
-    <div class="login-signup-buttons">
+    <div class="login-signup-wrapper">
       <a class="button button-white" href="<%= new_session_url %>">Log In</a>
       <a class="button button-blue" href="<%= new_user_url %>">Sign Up</a>
       <div class="header-dropdown-button">
