@@ -1,23 +1,49 @@
 <% author = @post.author %>
-<a href="<%= sub_url(@post.sub) %>">/r/<%= @post.sub.title %></a> | <p>posted by <a href="<%= user_url(author) %>"><%= author.username %></a></p>
 
-<h1><%= @post.title %></h1>
-URL: <%= @post.url %>
-<br>
-Content: <%= @post.content %>
-<% if author == current_user %>
-  <form action="" method="post">
-    <%= auth_token %>
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Post">
-  </form>
-<% end %>
+<div class="posts-show-main">
+  <div class="posts-show-main-column">
+    <div class="post-column">
+      <div class="post-column-header">
+        <ul class="post-votes">
+          <li class=" vote-arrow upvote"><i class="fa-solid fa-arrow-up"></i></li>
+          <li>100</li>
+          <li class=" vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
+        </ul>
+        <div style="width: 100%"> <!-- inline styles bad??? :^) -->
+          <div class="post-column-header-top-line"> 
+            <div style="display: flex"> <!-- here too -->
+              <p>Posted by <a href="<%= user_url(author) %>">u/<%= author.username %></a> <%= time_ago_in_words(@post.created_at) %> ago</p>
+              <ul class="awards">
+                <li>:)</li>
+                <li>:(</li>
+              </ul>
+            </div>
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <h1><%= @post.title %></h1>
+        </div>
+      </div>
+      <div class="post-content">
+        Content: <%= @post.content %>
+        <% if author == current_user %>
+          <form action="" method="post">
+            <%= auth_token %>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Post">
+          </form>
+        <% end %>
+      </div>
+      <h2>Comments</h2>
+      <a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
 
-<h2>Comments</h2>
-<a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
-
-<ul>
-  <% @comments_hash[nil].each do |comment| %>
-    <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
-  <% end %>
-</ul>
+      <ul>
+        <% @comments_hash[nil].each do |comment| %>
+          <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="sub-info">
+      <a href="<%= sub_url(@post.sub) %>"><%= @post.sub.title %></a>
+    </div>
+  </div>
+</div>

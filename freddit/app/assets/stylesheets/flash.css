@@ -1,4 +1,5 @@
 .flash {
   background: yellow;
   position: absolute;
+  display: block;
 }

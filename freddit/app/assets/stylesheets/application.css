@@ -15,10 +15,5 @@
  */
 @font-face {
   font-family: 'VAG Rounded Regular';
-  src: url('VAG Rounded Regular.ttf') format('truetype');
+  src: url('fonts/VAG Rounded Regular.ttf') format('truetype');
 }
-
-@import "reset.css";
-@import "flash.css";
-@import "header.css";
-@import "main.css";

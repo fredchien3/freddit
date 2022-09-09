@@ -1,0 +1,65 @@
+/* .posts-show-main {
+  background-color: #2E2F30;
+  display: flex;
+  justify-content: center;
+}
+
+.posts-show-main-column {
+  background-color: #646D73;
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+  position: relative;
+  padding-top: 100px;
+}
+
+.posts-show-header {
+  background: black;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1280px;
+  z-index: 1;
+  top: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.posts-show-header ul {
+  display: flex;
+}
+
+.post-column {
+  display: flex;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 740px;
+  margin-right: 12px;
+}
+
+.sub-info {
+  display: flex;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 310px;
+} */
+
+/* <div class="posts-show-header">
+<ul>
+  <li>UPVOTES HERE</li>
+  <li>
+    <i class="fa-regular fa-rectangle-list"></i>
+    <%= @post.title %>
+  </li>
+</ul>
+<div>
+  <i class="fa-solid fa-x"></i>
+  Close
+</div>
+</div> */
