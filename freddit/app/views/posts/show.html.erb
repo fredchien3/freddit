@@ -9,38 +9,45 @@
           <li>100</li>
           <li class=" vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
         </ul>
-        <div style="width: 100%"> <!-- inline styles bad??? :^) -->
+        <div>
           <div class="post-column-header-top-line"> 
-            <div style="display: flex"> <!-- here too -->
+            <div style="display: flex"> <!-- inline styles bad??? :^) -->
               <p>Posted by <a href="<%= user_url(author) %>">u/<%= author.username %></a> <%= time_ago_in_words(@post.created_at) %> ago</p>
               <ul class="awards">
-                <li>:)</li>
-                <li>:(</li>
+                <li>🤝12</li>
+                <li>🔥17</li>
+                <li>🎆3</li>
+                <li>😎12</li>
               </ul>
             </div>
             <i class="fa-regular fa-bell"></i>
           </div>
           <h1><%= @post.title %></h1>
+          <div class="post-content">
+            <%= @post.content %>
+          </div>
+          <div class="post-interactions-bar">
+            <ul>
+              <li><a href="#"><i class="fa-regular fa-message"></i><p>92 Comments</p></a></li>
+              <li><a href="#"><i class="fa-regular fa-share-from-square"></i><p>Share</p></a></li>
+              <li><a href="#"><i class="fa-regular fa-bookmark"></i><p>Save</p></a></li>
+              <li><a href="#"><i class="fa-regular fa-eye-slash"></i><p>Hide</p></a></li>
+              <li><a href="#"><i class="fa-regular fa-flag"></i><p>Report</p></a></li>
+            </ul>
+            <p>77% upvoted</p>
+          </div>
         </div>
       </div>
-      <div class="post-content">
-        Content: <%= @post.content %>
-        <% if author == current_user %>
-          <form action="" method="post">
-            <%= auth_token %>
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete Post">
-          </form>
-        <% end %>
-      </div>
-      <h2>Comments</h2>
-      <a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
+      <div class="post-column-comments">
+        <h2>Comments</h2>
+        <a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
 
-      <ul>
-        <% @comments_hash[nil].each do |comment| %>
-          <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
-        <% end %>
-      </ul>
+        <ul>
+          <% @comments_hash[nil].each do |comment| %>
+            <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="sub-info">
       <a href="<%= sub_url(@post.sub) %>"><%= @post.sub.title %></a>
