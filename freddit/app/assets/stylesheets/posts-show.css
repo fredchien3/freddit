@@ -5,7 +5,7 @@
   padding-top: 20px;
 }
 
-.posts-show-header {
+.posts-show-head {
   background: black;
   position: fixed;
   display: flex;
@@ -34,15 +34,16 @@
   border-radius: 5px;
 }
 
-.post-column-header {
+.post-column-head {
   padding: 9px 5px 0 4px;
   display: flex;
   color: #787c7e;
   position: relative;
-  border-bottom: 16px solid #dae0e6;
+  /* border-bottom: 16px solid #dae0e6; */
+  /* sometimes there, sometimes not */
 }
 
-.post-column-header h1 {
+.post-column-head h1 {
   color: black;
   font-size: 20px;
 }
@@ -73,7 +74,7 @@
   background: #e8e8e8;
 }
 
-.post-column-header-top-line {
+.post-column-head-top-line {
   display: flex;
   height: 36;
   width: auto;
@@ -81,16 +82,16 @@
   font-size: 12px;
 }
 
-.post-column-header-top-line div li {
+.post-column-head-top-line div li {
   margin-left: 5px;
 }
 
-.post-column-header-top-line i {
+.post-column-head-top-line i {
   font-size: 20px;
   color: #878a8c;
 }
 
-.post-column-header-top-line i:hover {
+.post-column-head-top-line i:hover {
   cursor: pointer;
 }
 
@@ -130,11 +131,6 @@
   width: 100%;
 }
 
-.post-interactions-bar ul li i {
-  font-size: 18px;
-  margin-right: 5px;
-}
-
 .post-interactions-bar ul li a {
   display: flex;
   justify-content: center;
@@ -152,6 +148,11 @@
 
 .post-interactions-bar ul li a:hover {
   background-color: #e8e8e8;
+}
+
+.post-interactions-bar ul li i {
+  font-size: 18px;
+  margin-right: 5px;
 }
 
 .sub-info {

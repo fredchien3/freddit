@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   before_action :require_logged_in, only: [:new, :create, :destroy]
 
-  def new
-    @comment = Comment.new
-    @post_id = params[:post_id]
-    render :new
-  end
+  # def new
+  #   @comment = Comment.new
+  #   @post_id = params[:post_id]
+  #   render :new
+  # end
 
   def create
     @comment = Comment.new(comment_params)

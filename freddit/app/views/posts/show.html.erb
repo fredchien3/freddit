@@ -3,15 +3,15 @@
 <div class="posts-show-main">
   <div class="posts-show-main-column">
     <div class="post-column">
-      <div class="post-column-header">
+      <div class="post-column-head">
         <ul class="post-votes">
           <li class=" vote-arrow upvote"><i class="fa-solid fa-arrow-up"></i></li>
           <li>100</li>
           <li class=" vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
         </ul>
-        <div>
-          <div class="post-column-header-top-line"> 
-            <div style="display: flex"> <!-- inline styles bad??? :^) -->
+        <div style="width: 100%"> <!-- inline styles bad??? :^) -->
+          <div class="post-column-head-top-line"> 
+            <div style="display: flex"> <!-- and here -->
               <p>Posted by <a href="<%= user_url(author) %>">u/<%= author.username %></a> <%= time_ago_in_words(@post.created_at) %> ago</p>
               <ul class="awards">
                 <li>🤝12</li>
@@ -39,9 +39,8 @@
         </div>
       </div>
       <div class="post-column-comments">
-        <h2>Comments</h2>
-        <a href="<%= new_post_comment_url(@post) %>">Post a Comment</a>
-
+        <!--a href="<%#= new_post_comment_url(@post) %>">Post a Comment</a-->
+        <%= render 'comments/new' %>
         <ul>
           <% @comments_hash[nil].each do |comment| %>
             <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>

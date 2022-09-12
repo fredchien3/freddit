@@ -19,5 +19,11 @@ ul, ol, li {
 }
 
 a {
-  color: blue;
+  color: inherit;
+  /* text-decoration: underline; */
+}
+
+textarea {
+  font-family: inherit;
+  background: transparent;
 }

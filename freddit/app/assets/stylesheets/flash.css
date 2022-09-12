@@ -2,4 +2,5 @@
   background: yellow;
   position: absolute;
   display: block;
+  z-index: 2;
 }

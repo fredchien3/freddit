@@ -1,0 +1,23 @@
+<form class="new-comment" action="<%= comments_url %>" method="post">
+  <%= auth_token %>
+  <textarea id="comment_body" name="comment[body]" rows="6" placeholder="What are your thoughts?"></textarea>
+  <input type="hidden" name="comment[post_id]" value="<%= @post_id %>">
+  <div class="submit-comment-bar">
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-b"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-info"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-link"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-strikethrough"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-code"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-superscript"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-exclamation"></i></a></li>
+      <li></li>
+      <li><a href="#"><i class="fa-solid fa-heading"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-list"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-list-ol"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-quote-right"></i></a></li>
+      <li><a href="#"><i class="fa-solid fa-ellipsis"></i></a></li>
+    </ul>
+    <input type="submit" value="Comment" class="button">
+  </div>
+</form>

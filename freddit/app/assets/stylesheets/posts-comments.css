@@ -1,0 +1,85 @@
+.post-column-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-comment {
+  position: relative;
+  border: 1px solid #edeff1;
+  border-radius: 4px;
+  margin: 24px 40px 30px 48px;
+  width: 552px;
+}
+
+.new-comment:focus-within {
+  border: 1px solid black;
+}
+
+.new-comment textarea {
+  resize: vertical;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 12px 20px 14px 15px;
+  overflow: hidden;
+}
+
+.new-comment textarea:focus {
+  outline: none;
+}
+
+.submit-comment-bar {
+  background: #f6f7f8;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+.submit-comment-bar ul {
+  display: flex;
+  margin-left: 4px;
+  padding: 0;
+}
+
+.submit-comment-bar ul li:nth-of-type(8) {
+  display: flex;
+  height: 32px;
+  margin-left: 6px;
+  border-right: 1px solid #edeff1;
+  margin-right: 6px;
+}
+
+.submit-comment-bar ul li a {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 5px;
+  color: #7e8183;
+}
+
+.submit-comment-bar ul li a:hover {
+  background-color: #d1d1d2;
+}
+
+.submit-comment-bar ul li i {
+
+}
+
+.submit-comment-bar input[type=submit] {
+  height: 24px;
+  width: 100px;
+  color: white;
+  background-color: #444E59;
+  border: none;
+}
+
+.submit-comment-bar input[type=submit]:hover {
+  background-color: #535c66;
+}

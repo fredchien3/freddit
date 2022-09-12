@@ -30,6 +30,7 @@ header {
   font-family: 'VAG Rounded Regular', Courier, sans-serif;
   font-size: 21px;
   font-weight: 900;
+  text-decoration: none;
   margin-right: 40px;
 }
 
@@ -63,6 +64,10 @@ header {
   border: 1px solid #0079D3;
 }
 
+.header-search-wrapper:focus-within {
+  border: 1px solid #0079D3;
+}
+
 #header-search-bar {
   border: none;
   background-color: transparent;
@@ -73,10 +78,6 @@ header {
 
 #header-search-bar:focus {
   outline: none;
-}
-
-.header-search-wrapper:focus-within {
-  border: 1px solid #0079D3;
 }
 
 #header-search-mag {
@@ -99,7 +100,12 @@ header {
   align-items: center;
   font-weight: bold;
   font-size: 14px;
+  text-decoration: none;
   margin: 0 9px 0 9px;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .button-white {
