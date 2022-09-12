@@ -1,7 +1,35 @@
-<li>
-  <%= comment.author.username %>
-  <a href="<%= comment_url(comment) %>"><%= comment.body %></a>
-
+<li <%= child_comment ? 'class=child-comment-li' : 'class=parent-comment-li' %>>
+  <main class="comment-main">
+    <a href="#" class="comment-profile-picture-wrapper">
+      <%= image_tag('cober.jpeg', alt: 'cober dog', class: 'comment-profile-picture') %>
+    </a>
+    <div class="comment-body">
+      <div class="comment-top-line">
+        <a href="<%= user_url(comment.author) %>"><%= comment.author.username %></a>
+        <p>· <%= time_ago_in_words(comment.created_at) %> ago</p>
+        <ul class="awards">
+          <li>💀</li>
+          <li>🤝2</li>
+          <li>😎3</li>
+        </ul>
+      </div>
+      <div class="comment-mid-line">
+        <%= comment.body %>
+      </div>
+      <div class="comment-bottom-line">
+        <ul class="comment-interactions-bar">
+          <li class="vote-arrow upvote"><i class="fa-solid fa-arrow-up"></i></li>
+          <li>100</li>
+          <li class="vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
+          <li><a href="#"><i class="fa-regular fa-message"></i>Reply</a></li>
+          <li><a href="#">Share</a></li>
+          <li><a href="#">Report</a></li>
+          <li><a href="#">Save</a></li>
+          <li><a href="#">Follow</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
   <form action="<%= comments_url %>" method="post">
     <%= auth_token %>
     <label for="comment_body">
@@ -22,9 +50,9 @@
     </form>
   <% end %>
 
-  <ul>
+  <ul class="comment-replies">
     <% comments_hash[comment.id].each do |child_comment| %>
-      <%= render "comments/comment", comment: child_comment, comments_hash: @comments_hash, post: @post %>
+      <%= render "comments/comment", comment: child_comment, comments_hash: @comments_hash, post: @post, child_comment: true %>
     <% end %>
   </ul>
 </li>

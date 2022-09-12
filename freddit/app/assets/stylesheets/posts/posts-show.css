@@ -67,11 +67,20 @@
   align-items: center;
   border-radius: 3px;
   color: #787c7e;
+  font-size: 16px;
 }
 
 .vote-arrow:hover {
   cursor: pointer;
   background: #e8e8e8;
+}
+
+.upvote:hover {
+  color: #cc3700;
+}
+
+.downvote:hover {
+  color: #5a75cc;
 }
 
 .post-column-head-top-line {

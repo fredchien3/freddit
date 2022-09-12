@@ -5,9 +5,9 @@
     <div class="post-column">
       <div class="post-column-head">
         <ul class="post-votes">
-          <li class=" vote-arrow upvote"><i class="fa-solid fa-arrow-up"></i></li>
+          <li class="vote-arrow upvote"><i class="fa-solid fa-arrow-up"></i></li>
           <li>100</li>
-          <li class=" vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
+          <li class="vote-arrow downvote"><i class="fa-solid fa-arrow-down"></i></li>
         </ul>
         <div style="width: 100%"> <!-- inline styles bad??? :^) -->
           <div class="post-column-head-top-line"> 
@@ -39,11 +39,10 @@
         </div>
       </div>
       <div class="post-column-comments">
-        <!--a href="<%#= new_post_comment_url(@post) %>">Post a Comment</a-->
         <%= render 'comments/new' %>
-        <ul>
+        <ul class="all-comments-ul">
           <% @comments_hash[nil].each do |comment| %>
-            <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post %>
+            <%= render "comments/comment", comment: comment, comments_hash: @comments_hash, post: @post, child_comment: false %>
           <% end %>
         </ul>
       </div>
