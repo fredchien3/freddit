@@ -11,7 +11,10 @@ A content aggregator and internet forum built in Ruby on Rails using the Model-V
 - Replying to comments
 
 ## Future
+- Styling, styling, styling
 - Upvotes (polymorphic - can upvote both posts and comments)
+- Login dropdown
+- Freddit gold and other awards
 - Joining Subfreddits
 - User profile page
 - Completely rebuild from scratch with Rails as an API backend and React + Redux frontend!!!!!
